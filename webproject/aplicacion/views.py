@@ -15,3 +15,6 @@ def index(request):
 
 def listas(request):
      return render(request, 'aplicacion/listas.html')
+
+def paginaPelicula(request):
+    return render(request, 'aplicacion/pelicula.html')

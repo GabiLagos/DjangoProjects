@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,19 +7,24 @@
     <title>Página de Inicio</title>
 </head>
 <body>
-    <h1>Mi primera plantilla Django!!!</h1>
+    {% include 'aplicacion/menu.html'%}
+    <h1 >Mi primera plantilla Django!!!</h1>
     <h2>Bienvenido usuario</h2>
 <ul>
     <li>
-        <a href="https://www.as.com"> IR A MARCA.COM"</a> 
+        <a href="https://www.as.com"> IR A MARCA.COM</a> 
     </li>
 
     <li>
-        <a href="friday/"> IR A LA PAG VIERNES"</a>
+        <a href="/friday/"> IR A LA PAG VIERNES</a>
     </li>
     
     <li> 
-        <a href="listas/"> IR A LISTAS" </a>
+        <a href="listas/"> IR A LISTAS </a>
+    </li>
+
+    <li> 
+        <a href="/peli/"> IR A LA PAGINA DE LA SIRENITA </a>
     </li>
 
         

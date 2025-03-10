@@ -1,0 +1,23 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> </title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css'%}"> 
+        
+</head>
+
+<body>
+    {% include 'aplicacion/menu.html'%}
+    
+    <h1 class="verde">  Mejor Pelicula Animada</h1>
+    <p> Bajo el Mar...</p>
+    
+    <img  onmouseover ="cambiar(this)" src="{%static 'images/sirenita.jpg'%}"/>
+    <script type="text/javascript"
+    src="{% static 'js/pelis.js'%}"></script>
+    
+</body>
+</html>

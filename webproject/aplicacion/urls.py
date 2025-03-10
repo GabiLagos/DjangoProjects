@@ -9,4 +9,6 @@ urlpatterns = [
     
     path('listas/', views.listas,name='listas'),
     
+    path('peli/', views.paginaPelicula, name='peli')
+    
     ]
