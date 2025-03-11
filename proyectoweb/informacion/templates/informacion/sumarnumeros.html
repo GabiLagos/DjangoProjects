@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUTBOL</title>
+</head>
+
+<body>
+    {% include 'informacion/menu.html' %}
+  
+   <h1>SUMAR NÚMEROS</h1>
+    <hr/>
+   <form method="post">
+    {%  csrf_token  %}
+    <label> Primer número </label>
+    <input type="number" name="cajanum1" required/>
+    <br/><br/>
+    <label> Segundo número </label>
+    <input type="number" name="cajanum2" required/>
+    <br/><br/>
+
+    <button> SUMAR </button>
+
+   </form>
+<hr/>
+   {% if resultado %}
+    <h1>La suma de {{numero1}}  y {{numero2}} es: {{ resultado }}</h1> 
+   {% endif %}
+
+
+
+
+</body>
+</html>
