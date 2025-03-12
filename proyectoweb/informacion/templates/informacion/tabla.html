@@ -1,0 +1,59 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+</head>
+<body>
+    {% include 'informacion/menu.html' %}
+   
+   <h1> TABLA DE MULTIPLICAR </h1>
+<hr> 
+<form method = "post">
+    {%csrf_token%}
+    <label> Número </label>
+    <input type = "number" name="mult" required/>
+    <button> ENVIAR </button>
+
+</form>
+
+<br><br>
+<h3> TABLA DE MULTIPLICAR, version 1 </h3>
+<table border=1>
+    <tr>
+      <th>Resultado</th>
+      </th>
+    </tr>
+
+    {% for num in tablaMult %} 
+    <tr> 
+    <td style="text-align: center;">{{num.result}}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+<br><br>
+<h3> TABLA DE MULTIPLICAR, version 2 </h3>
+<table border=1>
+    <tr>
+      <th  >Operacion</th>
+      <th>Resultado</th>
+      </th>
+    </tr>
+
+    {% for num in tablatabla %} 
+    <tr>
+    <td>{{num.numi}} * {{num.op}} =</td>  
+    <td style="text-align: center;">{{num.result}}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+
+</body>
+</html>

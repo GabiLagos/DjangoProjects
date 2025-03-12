@@ -2,10 +2,64 @@ from django.shortcuts import render
 
 # Create your views here.
 def index(request):
+    
     return render(request, 'informacion/index.html')
 
 def pelis(request):
+    
     return render(request, 'informacion/pelis.html')
+
+def tabla(request):
+    #tenemos que preguntar la caja tiene datos
+    if('mult' in request.POST):
+        #desarrollo de la conjetura de la tabla de multiplicar
+        multi = int (request.POST['mult']) 
+        xx=multi
+        c=0
+        x=0
+        listatabla = []
+        
+        while (c!=10):
+            c=c+1
+            x=multi*c
+            listatabla.append({"numi":xx, "op": c, "result": x})
+        
+        context = {
+            "tablaMult":listatabla
+        }
+        
+        return render(request, 'informacion/tabla.html', context)
+    
+    else:#si no hay informacion, seguimos como antes
+        return render(request, 'informacion/tabla.html')
+
+
+def collatz(request):
+     #tenemos que preguntar alguna de las cajas tiene datios
+    if('cajanum' in request.POST):
+        #desarrollo de la conjetura de Collatz
+        numero = int (request.POST['cajanum']) 
+        
+        listanum = []
+        
+        while (numero != 1):
+            if (numero % 2 == 0):
+                numero=int(numero/2)
+            else:
+                numero= int(1+numero*3)
+                
+            listanum.append(numero)
+        
+        context = {
+            "numerosCollatz":listanum
+        }
+        
+        return render(request, 'informacion/collatz.html', context)
+    
+    #si no hay informacion, seguimos como antes
+    else:
+        return render(request, 'informacion/collatz.html')
+
 
 def sumarnumeros(request):
     #tenemos que preguntar alguna de las cajas tiene datios
