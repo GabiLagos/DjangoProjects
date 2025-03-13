@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+</head>
+
+<body>
+    {%include 'pages/menu.html'%}
+<h1> Eliminar Departamentos </h1>
+
+<form method = "post">
+    {% csrf_token %}
+    <label> Ingrese el ID del DEPARTAMENTO que desea eliminar  </label>
+    <input type = "number" name = "cajanum"/> <br/><br/>
+    
+    <button> ELIMINAR DEPARTAMENTO </button>
+</form>
+ 
+
+
+</body>
+</html>

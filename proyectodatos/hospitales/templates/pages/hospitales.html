@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+</head>
+
+<body>
+    {%include 'pages/menu.html'%}
+    
+<h1> Hospitales Oracle </h1>
+<table border=1>
+    <tr>
+    <th> ID </th>
+    <th> Nombre </th>
+    <th> Dirección </th>
+    <th> Teléfono </th>
+    <th> Núm Camas </th>
+    </tr>
+    
+    {%for h in hospitales%}
+    <tr>
+    <td> {{h.id}} </td>
+    <td> {{h.nombre}} </td>
+    <td> {{h.direccion}} </td>
+    <td> {{h.telefono}} </td>
+    <td> {{h.num_cama}} </td>
+    </tr>
+    {% endfor %}
+     
+</table>
+
+
+
+</body>
+</html>

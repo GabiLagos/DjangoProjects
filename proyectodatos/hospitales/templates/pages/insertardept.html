@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+</head>
+
+<body>
+    {%include 'pages/menu.html'%}
+<h1> Insertar Departamentos </h1>
+
+<form method = "post">
+    {% csrf_token %}
+    <label> Id Departamento  </label>
+    <input type = "number" name = "cajanum"/> <br/><br/>
+    <label> Nombre Departamento  </label>
+    <input type = "text" name = "cajanombre"/> <br/><br/>
+    <label> Localidad Departamento  </label>
+    <input type = "text" name = "cajaloc"/> <br/><br/>
+    <button> INSERTAR DEPARTAMENTO </button>
+</form>
+<h2> {{mensaje}} </h2> 
+
+
+</body>
+</html>
