@@ -14,8 +14,8 @@
 
 <form method = "post">
     {% csrf_token %}
-    <label> Ingrese el ID del DEPARTAMENTO que desea eliminar  </label>
-    <input type = "number" name = "cajanum"/> <br/><br/>
+    <label> Ingrese el ID del DEPARTAMENTO que desea eliminar  </label><br/><br/>
+    <input type="number" name = "cajanum" value="{{numero}}"/> <br/><br/>
     
     <button> ELIMINAR DEPARTAMENTO </button>
 </form>

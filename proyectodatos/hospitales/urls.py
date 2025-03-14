@@ -12,4 +12,10 @@ urlpatterns = [
     
     path('borrardeptpbbdd/', views.borrarDeptBBDD, name='borrarDeptBBDD' ),
     
+    path('detallesdeptpbbdd', views.detallesDeptBBDD, name = 'detallesDeptBBDD'),
+    
+    path('updatedeptbbdd/', views.updateDeptBBDD, name ='updateDeptBBDD' ),
+    
+    path( 'empdept/', views.EmpDept, name = 'EmpDept'),
+    
 ]

@@ -19,15 +19,25 @@
     <th> ID </th>
     <th> Nombre </th>
     <th> Localidad </th>
+    <th>  </th>
+    <th>  </th>
     </tr>
     {%for d in departamentos%}
     <tr>
     <td> {{d.numero}} </td>
     <td> {{d.nombre}} </td>
     <td> {{d.localidad}} </td>
+    <td>  <a href="/detallesdeptpbbdd?id={{d.numero}}"> Detalles </a> </td>
+    <td style="background-color:Tomato;" > 
+        <a href="/borrardeptpbbdd?id={{d.numero}}"> DELETE </td>
+    <td style="background-color:LightGreen;" > 
+        <a href="/updatedeptbbdd?id={{d.numero}}"> UPDATE </td>
+            
     </tr>
      {% endfor %}
 </table>
+
+
 
 
 

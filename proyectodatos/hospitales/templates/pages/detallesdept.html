@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+</head>
+
+<body>
+    {%include 'pages/menu.html'%}
+    
+<h1> Detalles Departamentos </h1>
+
+<hr/>
+<input type="number" value="{{departamento.numero}}"/>
+<p> Número: {{departamento.numero}}</p>
+<p> Nombre: {{departamento.nombre}}</p>
+<p> Localidad: {{departamento.localidad}}</p>
+
+
+
+
+
+
+
+</body>
+</html>
