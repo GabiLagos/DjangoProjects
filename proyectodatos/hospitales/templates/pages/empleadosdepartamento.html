@@ -11,17 +11,30 @@
 <body>
     {%include 'pages/menu.html'%}
     
-<h1> Empleados por Departamentos </h1>
+<h1> Empleados por Departamento </h1>
 <hr/>
+<h2> Version 1: Las opciones ingresan manualmente</h2>
 <form method = "post">
     {% csrf_token %}
     <label> Filtrar por Departamento:   </label><br/><br/>
-    <input type="number" name = "cajadept" /> <br/><br/>
+    <input type="number" name = "iddept" /> <br/><br/>
     <button> FILTRAR </button><br/><br/>
 </form>
 <hr/>
 
-
+<h2> Version 2: Las opciones vienen desde la BBDD</h2>
+<form method = "post">
+    {% csrf_token %}
+    <label> Filtrar por Departamento:   </label><br/><br/>
+    <select name = "iddept" /> 
+        {%for dept in departamentos%}
+        <option value={{dept.numero}}> {{dept.nombre}} </option>
+        {%endfor%}
+    </select>       
+<br/><br/>
+    <button> FILTRAR </button><br/><br/>
+</form>
+<hr/>
 
 <table border=1>
     <tr>
@@ -39,8 +52,10 @@
     <td> {{e.no_dept}} </td>
     </tr>
     {% endfor %}
-  
 </table>
+
+
+<hr/>
 
 
 

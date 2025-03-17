@@ -99,22 +99,24 @@ def detallesDeptBBDD(request):
     
     
 def EmpDept(request):
-    if ('cajadept'in request.POST):
-        num= request.POST['cajadept']
-        servicio= ServiceEmpleados()
+    servicio= ServiceEmpleados()
+    serviciodept=ServiceDepartamentos()
+    depts=serviciodept.getDepartamentos()
+    
+    if ('iddept'in request.POST):
+        num= request.POST['iddept']
         emps= servicio.filtraEmpleados(num)
         context = {
-            "empleados" : emps
+            "empleados" : emps,
+            "departamentos": depts
         }
-        return render(request, 'pages/empleadosdepartamento.html', context)
-        
-        
     else:
-        servicio= ServiceEmpleados()
         emps = servicio.getEmpleados()
         context = {
-            "empleados" : emps
+            "empleados" : emps,
+            "departamentos": depts
         }
-        return render(request, 'pages/empleadosdepartamento.html', context)
+        
+    return render(request, 'pages/empleadosdepartamento.html', context)
     
     
