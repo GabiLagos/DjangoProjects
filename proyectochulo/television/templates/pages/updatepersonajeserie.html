@@ -11,21 +11,33 @@
 </head>
 
 <body>
+    {%include 'pages/menu.html'%}
+   
     
-{%include 'pages/menu.html'%}
-<h1> LISTADO DE PERSONAJES </h1> 
+    
+<h1 class="d-flex justify-content-center"> Update Personaje Serie </h1>
 
-{%for p in person%}
-<div class="card" style="width: 18rem;">
-  <img src="{{p.imagen}}" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">{{p.nombre}}</h5>
-    <p class="card-text">Serie: {{p.idserie}}</p>
-    <a href="/modificarpersonajes?idperson={{p.idperson}}" 
-    class="btn btn-warning">Edit</a>
-  </div>
+<div>
+    <form method="post">
+        {% csrf_token %}
+        <select name="cajaperson" class="form-control">
+            {%for p in personajes%}
+            <option value={{p.idperson}}>{{p.nombre}}</option>
+            {%endfor%}
+        </select>
+        <br>
+        <select name="cajaserie" class="form-control">
+            {%for s in series%}
+            <option value={{s.idserie}}>{{s.nombre}}</option>
+            {%endfor%}
+        </select>
+        <br>
+        <button class="btn btn-info"> Update </button>
+    </form>
+
 </div>
-{%endfor%} 
+
+
 
 
 
